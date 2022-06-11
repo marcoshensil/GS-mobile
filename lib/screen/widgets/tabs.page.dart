@@ -6,7 +6,7 @@ class TabsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFCFCFF),
+      backgroundColor: Color(grey),
       body: TabBarView(
         children: [
           ConsultPage(),

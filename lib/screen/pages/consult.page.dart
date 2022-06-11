@@ -11,15 +11,13 @@ class ConsultPage extends StatefulWidget {
 class _ConsultPageState extends State<ConsultPage> {
   var data = MockData.getData;
 
-  //var data = ApiService().getInsumos() as List;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0.4,
-        title: Text("Consultar"),
+        title: Text("Ver"),
         centerTitle: true,
       ),
       body: Container(
@@ -32,14 +30,14 @@ class _ConsultPageState extends State<ConsultPage> {
                 itemCount: data.length,
                 itemBuilder: (context, int i) {
                   return Container(
-                    padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-                    height: 220,
+                    padding: EdgeInsets.fromLTRB(9, 9, 9, 0),
+                    height: 210,
                     width: double.maxFinite,
                     child: Card(
                       elevation: 5,
                       child: Container(
                         decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: Colors.light brown,
                         ),
                         child: Padding(
                           padding: EdgeInsets.all(7),
@@ -50,12 +48,12 @@ class _ConsultPageState extends State<ConsultPage> {
                                 children: <Widget>[
                                   Padding(
                                       padding: const EdgeInsets.only(
-                                          left: 10, top: 5),
+                                          left: 9, top: 4),
                                       child: Column(
                                         children: <Widget>[
                                           ConsultCard(
                                             nome: data[i]["nome"],
-                                            quantidade: data[i]["quantidade"],
+                                            quantidade: data[i]["tipo"],
                                           )
                                         ],
                                       ))

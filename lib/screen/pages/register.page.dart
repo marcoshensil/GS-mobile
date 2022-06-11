@@ -23,26 +23,26 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFCFCFF),
+      backgroundColor: Color(grey),
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0.4,
-        title: Text("Cadastrar"),
+        title: Text("Registrar"),
         centerTitle: true,
       ),
       body: ListView(
         children: <Widget>[
           SizedBox(
-            height: 30,
+            height: 25,
           ),
           Padding(
             padding: EdgeInsets.only(
-              left: 30,
-              right: 30,
-              bottom: 10,
+              left: 25,
+              right: 25,
+              bottom: 8,
             ),
             child: BPInputLight(
-              label: "Nome do produto",
+              label: "Tipo",
               keyboard: TextInputType.text,
               password: false,
               controller: this._nomeController,
@@ -51,12 +51,12 @@ class _RegisterPageState extends State<RegisterPage> {
           ),
           Padding(
             padding: EdgeInsets.only(
-              left: 30,
-              right: 30,
-              bottom: 10,
+              left: 25,
+              right: 25,
+              bottom: 8,
             ),
             child: BPInputLight(
-              label: "Fornecedor do produto",
+              label: "Valor",
               keyboard: TextInputType.text,
               password: false,
               controller: this._fornecedorController,
@@ -65,12 +65,12 @@ class _RegisterPageState extends State<RegisterPage> {
           ),
           Padding(
             padding: EdgeInsets.only(
-              left: 30,
-              right: 30,
-              bottom: 10,
+              left: 25,
+              right: 25,
+              bottom: 25,
             ),
             child: BPInputLight(
-              label: "Quantidade do produto",
+              label: "Juros",
               keyboard: TextInputType.text,
               password: false,
               controller: this._quantidadeController,
@@ -79,27 +79,10 @@ class _RegisterPageState extends State<RegisterPage> {
           ),
           Padding(
             padding: EdgeInsets.only(
-              left: 30,
-              right: 30,
-              bottom: 10,
+              left: 25,
+              right: 25,
+              bottom: 8,
             ),
-            child: BPInputLight(
-              label: "Valor do produto",
-              keyboard: TextInputType.text,
-              password: false,
-              controller: this._valorController,
-              capitalization: TextCapitalization.none,
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(
-              left: 30,
-              right: 30,
-              bottom: 10,
-            ),
-            child: BPButtonDark(
-              label: "Cadastrar produto",
-              callback: register(),
             ),
           ),
         ],
@@ -108,27 +91,27 @@ class _RegisterPageState extends State<RegisterPage> {
   }
 
   register() {
-    var data = new AgriculturalInput();
+    var data = new InvestimentolInput();
 
     if (this._nomeController.text != null || this._nomeController.text == "") {
       data.nome = this._nomeController.text;
     }
 
-    if (this._fornecedorController.text != null ||
-        this._fornecedorController.text == "") {
-      data.fornecedor = this._fornecedorController.text;
-    }
-
-    if (this._quantidadeController.text != null ||
-        this._quantidadeController.text == "") {
-      data.quantidade = int?.tryParse(this._quantidadeController.text);
+    if (this._tipoController.text != null ||
+        this._tipoController.text == "") {
+      data.tipo = this._tipoController.text;
     }
 
     if (this._valorController.text != null ||
         this._valorController.text == "") {
       data.valor = double?.tryParse(this._valorController.text);
     }
+    
+    if (this._jurosController.text != null ||
+        this._jurosController.text == "") {
+      data.juros = int?.tryParse(this._jurosController.text);
+    }
 
-    this.apiService.postInsumos(data);
+    this.apiService.postInvestimento(data);
   }
 }

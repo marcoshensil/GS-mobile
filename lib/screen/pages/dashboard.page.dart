@@ -4,7 +4,7 @@ class DashboardPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFAFBFF),
+      backgroundColor: Color(grey),
       body: ListView(
         children: <Widget>[
           SizedBox(

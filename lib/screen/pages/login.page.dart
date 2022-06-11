@@ -8,7 +8,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFCFCFF),
+      backgroundColor: Color(grey),
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0.4,
@@ -18,16 +18,16 @@ class LoginPage extends StatelessWidget {
       body: ListView(
         children: <Widget>[
           SizedBox(
-            height: 30,
+            height: 25,
           ),
           Padding(
             padding: EdgeInsets.only(
-              left: 30,
-              right: 30,
-              bottom: 10,
+              left: 25,
+              right: 25,
+              bottom: 8,
             ),
             child: BPInputLight(
-              label: "Seu e-mail",
+              label: " e-mail",
               keyboard: TextInputType.emailAddress,
               password: false,
               capitalization: TextCapitalization.none,
@@ -35,12 +35,12 @@ class LoginPage extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.only(
-              left: 30,
-              right: 30,
-              bottom: 30,
+              left: 25,
+              right: 25,
+              bottom: 25,
             ),
             child: BPInputLight(
-              label: "Sua senha",
+              label: "senha",
               keyboard: TextInputType.text,
               password: true,
               capitalization: TextCapitalization.none,
@@ -48,12 +48,12 @@ class LoginPage extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.only(
-              left: 30,
-              right: 30,
-              bottom: 10,
+              left: 25,
+              right: 25,
+              bottom: 8,
             ),
             child: BPButtonDark(
-              label: "Fazer Login",
+              label: "Entrar",
               callback: () {
                 Navigator.push(
                   context,

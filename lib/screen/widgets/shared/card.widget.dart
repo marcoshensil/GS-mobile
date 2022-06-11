@@ -3,9 +3,9 @@ import 'package:mobile_global_solution/screen/themes/app_theme.dart';
 
 class ConsultCard extends StatelessWidget {
   final String nome;
-  final int quantidade;
+  final String tipo;
 
-  ConsultCard({this.nome, this.quantidade});
+  ConsultCard({this.nome, this.tipo});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class ConsultCard extends StatelessWidget {
           children: <Widget>[
             cardIcon(),
             SizedBox(
-              width: 10,
+              width: 8,
             ),
             cardName(nome),
             Spacer(),
@@ -23,10 +23,10 @@ class ConsultCard extends StatelessWidget {
           ],
         ),
         SizedBox(
-          height: 80,
+          height: 75,
         ),
         Row(
-          children: <Widget>[cardQuantityValue(quantidade)],
+          children: <Widget>[cardQuantityValue(tipo)],
         ),
       ],
     );
@@ -34,13 +34,13 @@ class ConsultCard extends StatelessWidget {
 
   Widget cardIcon() {
     return Padding(
-      padding: const EdgeInsets.only(left: 15.0),
+      padding: const EdgeInsets.only(left: 13.0),
       child: Align(
           alignment: Alignment.centerLeft,
           child: Icon(
             Icons.agriculture_sharp,
             color: primaryColor,
-            size: 40,
+            size: 35,
           )),
     );
   }
@@ -56,15 +56,15 @@ class ConsultCard extends StatelessWidget {
     );
   }
 
-  Widget cardQuantityValue(int quantidade) {
+  Widget cardQuantityValue(int tipo) {
     return Align(
       alignment: Alignment.centerLeft,
       child: Padding(
-        padding: const EdgeInsets.only(left: 20.0),
+        padding: const EdgeInsets.only(left: 18.0),
         child: Row(
           children: [
             Text(
-              "Quantidade: ",
+              "tipo: ",
               style: TextStyle(
                 color: Colors.grey,
                 fontSize: 20,

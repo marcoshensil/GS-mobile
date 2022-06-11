@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 const brightness = Brightness.light;
 const primaryColor = Color.fromARGB(255, 0, 79, 197);
-const lightColor = const Color(0xFFFFFFFF);
+const lightColor = const Color(grey);
 const backgroundColor = Color.fromARGB(237, 245, 245, 245);
 
 // ignore: non_constant_identifier_names
